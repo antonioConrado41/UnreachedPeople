@@ -1,0 +1,19 @@
+
+.peoplegrouplist h1{
+    font-size: 28px;
+    text-align: center;
+    margin: 20px;
+    border: 2px solid #2F4F4F;
+    border-radius: 5px;
+  }
+  
+ .card{
+      font-size: large;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: rgb(255, 255, 255);
+      border: 2px solid #2F4F4F;
+      border-radius: 5px;   
+  }  
+
+ 
+

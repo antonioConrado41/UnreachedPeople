@@ -1,0 +1,28 @@
+.unreachedlist{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 5px;
+}
+
+.unreachedlist form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.unreachedlist select{
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.unreachedlist button{
+    font-size: 18px;
+    padding: 7px 10px;
+    margin: 10px;
+    background-color: #129762;
+}
