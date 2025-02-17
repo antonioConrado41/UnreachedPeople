@@ -1,5 +1,5 @@
 
-.peoplegrouplist h1{
+.display h1{
     font-size: 28px;
     text-align: center;
     margin: 20px;
@@ -7,7 +7,7 @@
     border-radius: 5px;
   }
   
- .card{
+ .display card{
       font-size: large;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       background-color: rgb(255, 255, 255);
@@ -15,5 +15,39 @@
       border-radius: 5px;   
   }  
 
- 
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+ .Card {
+  flex: 0 1 24%;
+ }
+
+  .display button{
+    font-size: 18px;
+    padding: 7px 10px;
+    margin: 10px;
+    background-color: #129762;
+    
+}
+
+.display span {
+    font-size: 18px;
+    padding: 7px 10px;
+    margin: 10px;
+    background-color: #129762;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.display li{
+  font-size: 20px;
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 

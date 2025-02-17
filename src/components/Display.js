@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './Display.css'
+import {Card, Button} from 'react-bootstrap';
 
 export const Display = ({info}) => {
   const [show, setShow] = useState(false);
@@ -7,21 +8,34 @@ export const Display = ({info}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     }
+  
 
   return (
-    <section className='peoplegrouplist'>
-      <form onSubmit={handleSubmit}>
-      <span className='trigger' onClick={()=> setShow(!show)}> {show? "hide search": "show search"} </span>
-      <h1>
-        Unreached people goups 
-      </h1>
-      {show && info.map((i) => (
-        <div className='card' id={i.PeopleID3ROG3}>
-            <p> key={i.PeopleID3ROG3} peopleName={i.PeopNameInCountry} continent={i.Continent} </p>
-        </div>
-      ))}
-      </form>
+
+    <section className='display'>
+    <form onSubmit={handleSubmit}>
+      <span className='trigger' onClick={()=> setShow(!show)}> {show? "Hide search": "show search"} </span>
+    <section className='cards'>
+    {show && info.map((each) => (
+
+<Card key={each.PeopleID3ROG3} style={{ width: '18rem', height: '50rem' }}>
+<Card.Img variant="top" src={each.PeopleGroupPhotoURL} />
+<Card.Body>
+  <Card.Title style={{fontWeight: 'bold'}}>{each.PeopNameInCountry}</Card.Title>
+  <Card.Subtitle>{each.RegionName}</Card.Subtitle>
+  <Card.Subtitle>Religion: {each.PrimaryReligion}</Card.Subtitle>
+  <Card.Text >
+   {each.Summary}
+  </Card.Text>
+  <a href={each.PeopleGroupURL}> <Button variant="link">More Info</Button>
+  </a>
+</Card.Body>
+</Card>
+))}
     </section>
+    </form>
+    </section>
+
   )
 }
 

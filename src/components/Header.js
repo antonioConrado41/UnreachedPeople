@@ -1,4 +1,4 @@
-import Logo from '../assets/language.png'
+import Logo from '../assets/Joshua_Project_Logo.png'
 import './Header.css'
 import React from 'react'
 

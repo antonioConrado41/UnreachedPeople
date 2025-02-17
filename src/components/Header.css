@@ -7,8 +7,14 @@ header {
   align-items: center;
   max-width: 1000px;
   margin: auto;
-  /* border-bottom: 1px solid #d7d7d7;  */
-  border-bottom: 1px solid var(--theme-border); 
   font-size: 18px;
   padding: 0px 10px;
+  }
+
+  .logo {
+    text-align: left;
+    margin: 10px;
+    margin-top: 30px;
+    height: 50px;
+    width: 50px;
   }

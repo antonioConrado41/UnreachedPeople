@@ -22,7 +22,7 @@ export const UnreachedList = () => {
 
   return (
     <section>
-        <Search  className='unreachedlist' url={url} info={info} setInfo={setInfo} apikey={ApiKey}/>
+        <Search  className='unreachedlist' url={url} setUrl={setUrl} info={info} setInfo={setInfo} apiKey={ApiKey}/>
         <Display className='unreachedlist' info={info} />
     </section>
   )
