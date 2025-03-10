@@ -3,6 +3,7 @@ import React from 'react'
 import './UnreachedList.css'
 import { Search } from './Search'
 import {Display } from './Display'
+import {Filter} from './Filter'
 import { useEffect, useState } from 'react'
 
 export const UnreachedList = () => {
@@ -23,6 +24,7 @@ export const UnreachedList = () => {
   return (
     <section>
         <Search  className='unreachedlist' url={url} setUrl={setUrl} info={info} setInfo={setInfo} apiKey={ApiKey}/>
+        <Filter  className='unreachedlist' url={url} info={info}/>
         <Display className='unreachedlist' info={info} />
     </section>
   )
