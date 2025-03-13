@@ -16,13 +16,13 @@ export const Display = ({info, peopleGroup}) => {
     <section className='display'>
     <form onSubmit={handleSubmit}>
       <span className='trigger' onClick={()=> setShow(!show)}> {show? "Hide search": "show search"} </span>
-      <h1 style={{
+      {/* <h1 style={{
           color: show ? "#00FF00" : "#FF0000",
           borderRadius: "5px",
           borderColor: show ? "#00FF00" : "#FF0000",
           // border-radius: // can't use like this, for javascript this is a minus signal, use camelcase instead
 
-              }}> Unreached People Groups </h1>
+              }}> Unreached People Groups </h1> */}
     <section className='cards'>
     {show && filteredInfo.map((each) => (
 

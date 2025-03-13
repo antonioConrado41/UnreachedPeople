@@ -22,7 +22,6 @@ export const UnreachedList = () => {
   return (
     <section>
         <Search  className='unreachedlist' url={url} setUrl={setUrl} info={info} setInfo={setInfo} apiKey={ApiKey} />
-        
     </section>
   )
 }
