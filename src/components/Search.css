@@ -21,6 +21,15 @@
     flex-wrap: wrap;
 }
 
+.search input{
+    font-size: 18px;
+    padding: 7px;
+    border: 1px solid #878787;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 10px;
+}
+
 
 .search button{
     font-size: 18px;

@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import './Display.css'
 import {Card, Button} from 'react-bootstrap';
 
-export const Display = ({info}) => {
+export const Display = ({info, peopleGroup}) => {
   const [show, setShow] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     }
+
+    const filteredInfo = info.filter(unique => (unique.PeopNameInCountry.toLowerCase().includes(peopleGroup.toLowerCase())));
 
    return (
 
@@ -22,7 +24,7 @@ export const Display = ({info}) => {
 
               }}> Unreached People Groups </h1>
     <section className='cards'>
-    {show && info.map((each) => (
+    {show && filteredInfo.map((each) => (
 
   <Card key={each.PeopleID3ROG3} style={{ width: '18rem', height: '50rem' }}>
 <Card.Img variant="top" src={each.PeopleGroupPhotoURL} />

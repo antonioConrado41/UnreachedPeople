@@ -2,12 +2,10 @@
 import React from 'react'
 import './UnreachedList.css'
 import { Search } from './Search'
-import {Display } from './Display'
-import {Filter} from './Filter'
 import { useEffect, useState } from 'react'
 
 export const UnreachedList = () => {
-
+  
     const ApiKey = `b41706427183`;
     const [info, setInfo] = useState([]);
     const [url, setUrl] = useState(`https://api.joshuaproject.net/v1/people_groups.json?api_key=${ApiKey}&bible_status=0&continents=EUR&limit=250&page=1`)
@@ -23,9 +21,8 @@ export const UnreachedList = () => {
 
   return (
     <section>
-        <Search  className='unreachedlist' url={url} setUrl={setUrl} info={info} setInfo={setInfo} apiKey={ApiKey}/>
-        <Filter  className='unreachedlist' url={url} info={info}/>
-        <Display className='unreachedlist' info={info} />
+        <Search  className='unreachedlist' url={url} setUrl={setUrl} info={info} setInfo={setInfo} apiKey={ApiKey} />
+        
     </section>
   )
 }
