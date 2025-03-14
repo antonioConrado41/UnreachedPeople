@@ -19,13 +19,11 @@ export const Search = ({setUrl ,info, apiKey, url}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setContinent(continent);
-        console.log('hello world')
     }
 
     const trySetUrl = (valueContinent) =>{
        
         console.log(continent);
-        console.log("nonselect");
         console.log(continent === 'nonselect');
         if (continent !== 'nonselect'){  //!= value !== value & type
             console.log('valuecontinent != nonselect')
@@ -55,7 +53,7 @@ export const Search = ({setUrl ,info, apiKey, url}) => {
         {/* <button onClick={()=> setUrl(`https://api.joshuaproject.net/v1/people_groups.json?api_key=${apiKey}&bible_status=0&continents=${continent}&limit=250&page=1`)}> Search! </button> */}
     </form>
     <Filter  className='unreachedlist' url={url} info={info} peopleGroup={peopleGroupName}/>
-    <Display className='unreachedlist' info={info} peopleGroup={peopleGroupName} />
+    <Display className='unreachedlist' info={info} peopleGroup={peopleGroupName} continent={continent} />
 </section>
   )
 }

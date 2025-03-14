@@ -2,12 +2,19 @@ import React, {useState} from 'react'
 import './Display.css'
 import {Card, Button} from 'react-bootstrap';
 
-export const Display = ({info, peopleGroup}) => {
+export const Display = ({info, peopleGroup, continent}) => {
   const [show, setShow] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     }
+
+  const handleButtonShow = (show, continent) => {
+    if (continent !== 'nonselect') {
+      setShow(!show);
+    } else (alert("Select one Continent!"));
+
+  }
 
     const filteredInfo = info.filter(unique => (unique.PeopNameInCountry.toLowerCase().includes(peopleGroup.toLowerCase())));
 
@@ -15,7 +22,7 @@ export const Display = ({info, peopleGroup}) => {
 
     <section className='display'>
     <form onSubmit={handleSubmit}>
-      <span className='trigger' onClick={()=> setShow(!show)}> {show? "Hide search": "show search"} </span>
+      <span className='trigger' onClick={()=> handleButtonShow(show, continent)}> {show? "Hide search": "show search"} </span>
       {/* <h1 style={{
           color: show ? "#00FF00" : "#FF0000",
           borderRadius: "5px",
@@ -24,7 +31,7 @@ export const Display = ({info, peopleGroup}) => {
 
               }}> Unreached People Groups </h1> */}
     <section className='cards'>
-    {show && filteredInfo.map((each) => (
+    {show && continent!== 'nonselect' && filteredInfo.map((each) => (
 
   <Card key={each.PeopleID3ROG3} style={{ width: '18rem', height: '50rem' }}>
 <Card.Img variant="top" src={each.PeopleGroupPhotoURL} />
