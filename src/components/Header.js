@@ -7,6 +7,7 @@ export const Header = () => {
     <header>
         <img className='logo' src={Logo} alt=''/>
         <a href='/'> Home </a>
+        <a href='/maps'>Maps</a>
     </header>
   )
 }

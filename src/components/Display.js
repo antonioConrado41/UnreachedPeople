@@ -1,9 +1,17 @@
 import React, {useState} from 'react'
 import './Display.css'
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import MapMain from './pages/MapMain';
+
 
 export const Display = ({info, peopleGroup, continent}) => {
   const [show, setShow] = useState(false);
+  const [peopleID, setPeopleID] = useState('18995');
+  const API_KEY = process.env.REACT_APP_API_KEY
+
+  const navigate = useNavigate();
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,9 +24,15 @@ export const Display = ({info, peopleGroup, continent}) => {
 
   }
 
-    const filteredInfo = info.filter(unique => (unique.PeopNameInCountry.toLowerCase().includes(peopleGroup.toLowerCase())));
+  // const callMap = (peopleid) => {
+  //   setPeopleID(peopleid);
+  //   console.log(peopleID);
+  //   navigate('/maps');
+  // };
 
-   return (
+  const filteredInfo = info.filter(unique => (unique.PeopNameInCountry.toLowerCase().includes(peopleGroup.toLowerCase())) || unique.Ctry.toLowerCase().includes(peopleGroup.toLowerCase()));
+
+ return (
 
     <section className='display'>
     <form onSubmit={handleSubmit}>
@@ -39,6 +53,8 @@ export const Display = ({info, peopleGroup, continent}) => {
   <Card.Title style={{fontWeight: 'bold'}}>{each.PeopNameInCountry}</Card.Title>
   <Card.Subtitle>{each.RegionName}</Card.Subtitle>
   <Card.Subtitle>Religion: {each.PrimaryReligion}</Card.Subtitle>
+  <Card.Subtitle>{each.Ctry}</Card.Subtitle>
+  <Card.Subtitle>{each.Latitude}, {each.Longitude}</Card.Subtitle>
   <Card.Text >
    {each.Summary}
   </Card.Text>
@@ -47,6 +63,9 @@ export const Display = ({info, peopleGroup, continent}) => {
       <Button style={{}} variant="link">
       More Info
       </Button>
+    </a>
+    <a>
+      {/* <button onClick={()=> console.log(each.PeopleID3)}>See on Map</button> */}
     </a>
   </div>
  

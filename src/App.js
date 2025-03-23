@@ -1,19 +1,17 @@
 import './App.css';
-import {Header} from './components/Header';
-import {UnreachedList} from './components/UnreachedList';
-import {Footer} from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import  Home  from './components/pages/Home';
+import MapMain from './components/pages/MapMain';
  
 function App() {
 
   return (
-    <div className="App">
-      <Header />
-        <main>
-         <UnreachedList />
-        </main>
-      <Footer/>
-    </div>
-  );
+    <div className='app'>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/maps" element={<MapMain/>}/>
+      </Routes>
+    </div>    
+  )
 }
-
 export default App;
